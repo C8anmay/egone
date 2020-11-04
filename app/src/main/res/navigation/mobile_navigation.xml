@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.acm.drawer.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/home" />
+    <fragment
+        android:id="@+id/nav_nowplaying"
+        android:name="com.acm.drawer.ui.home.nowplaying.NowPlayingFragment"
+        android:label="fragment_now_playing"
+        tools:layout="@layout/fragment_now_playing" >
+        <action
+            android:id="@+id/action_nav_nowplaying_to_youtubeFragment"
+            app:destination="@id/youtubeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_popular"
+        android:name="com.acm.drawer.ui.home.popular.PopularFragment"
+        android:label="fragment_popular"
+        tools:layout="@layout/fragment_popular" />
+    <fragment
+        android:id="@+id/nav_toprate"
+        android:name="com.acm.drawer.ui.home.toprate.ToprateFragment"
+        android:label="fragment_toprate"
+        tools:layout="@layout/fragment_toprate" />
+    <fragment
+        android:id="@+id/youtubeFragment"
+        android:name="com.acm.drawer.YoutubeFragment"
+        android:label="fragment_youtube"
+        tools:layout="@layout/fragment_youtube" >
+        <action
+            android:id="@+id/action_youtubeFragment_to_nav_nowplaying"
+            app:popUpTo="@id/nav_nowplaying" />
+    </fragment>
+
+</navigation>
